@@ -1,0 +1,20 @@
+{
+    "sftp": {
+        "host": "localhost",
+        "username": "username",
+        "localRootDirectory": "assets/",
+        "remoteRootDirectory": "remote_path",
+        "privateKey": "private_key",
+        "passphrase": "key's password",
+        "ignore_rule":[
+            ".",
+            "node_modules"
+        ]
+    },
+   
+    "common": {
+        "server_url": "url_name",
+        "post_dir": "./source/_posts/",
+        "removeImageOnSuccessful": true
+    }
+}
