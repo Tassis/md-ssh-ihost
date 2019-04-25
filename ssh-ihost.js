@@ -20,7 +20,7 @@ function upload( config , callback){
     if(file_list.length < 1)
     {
         console.error('[SSH-IHOST] Nothing needs uploaded.') 
-        process.exit(1);
+        return;
     }
 
     // include ssh package.
