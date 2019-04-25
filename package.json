@@ -1,0 +1,12 @@
+{
+  "name": "md-ssh-ihost",
+  "version": "0.0.4",
+  "description": "upload image to hosting and change markdown's path tool.",
+  "main": "ssh-ihost.js",
+  "repository": "https://github.com/Tassis/ssh-ihost.git",
+  "author": "tassis <tassise12@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-ssh": "^6.0.0"
+  }
+}
