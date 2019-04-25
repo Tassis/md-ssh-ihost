@@ -1,6 +1,6 @@
 {
   "name": "md-ssh-ihost",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "upload image to hosting and change markdown's path tool.",
   "main": "ssh-ihost.js",
   "repository": "https://github.com/Tassis/ssh-ihost.git",
