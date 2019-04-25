@@ -16,6 +16,13 @@ function SSHIHostCore() {
  */
 function upload( config , callback){
     files = get_files(config.localRootDirectory)
+
+    if(file_list.length < 1)
+    {
+        console.error('[SSH-IHOST] Nothing needs uploaded.') 
+        process.exit(1);
+    }
+
     // include ssh package.
     const node_ssh = require('node-ssh')
     const ssh = new node_ssh();
@@ -77,7 +84,14 @@ function refersh_path(successful_list, config){
                 data = file.replace(`](${pic_path}`, `](${pic_url}`);
                 save_post(file_name, data, config);
             }
+
+            if(config.removeImageOnSuccessful)
+                fs.unlinkSync(element);
         });
+        dir_path = path.join(config.localRootDirectory, file_name);
+        // if folder is empty, remove it.
+        if (get_files(dir_path).length < 1)
+            fs.rmdirSync(dir_path)
     });
 }
 
@@ -95,13 +109,6 @@ function get_files(src){
         file_path = path.join(src, element)
         file_list.push(path.relative(src, file_path));
     });
-
-    if(file_list.length < 1)
-    {
-        console.error('[SSH-IHOST] Nothing needs uploaded.') 
-        root_path = src;
-        process.exit(1);
-    }
 
     return files
 }
